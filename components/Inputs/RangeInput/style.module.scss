@@ -1,0 +1,52 @@
+@import "@/styles/mixins.scss";
+
+$input-height: 15;
+
+.wrapper {
+  padding: 0.5rem;
+  border-bottom: 1px solid darken(color(primary, base), 70);
+  display: flex;
+  gap: 1rem;
+  .label {
+    min-width: 80px;
+    margin-bottom: 0.25rem;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+}
+
+.input {
+  -webkit-appearance: none;
+  width: calc(100% - 5px);
+  height: #{$input-height}px;
+  background-color: color(secondary, base);
+  background-image: radial-gradient(
+    color(primary, base) 0.4px,
+    color(secondary, base) 0.4px
+  );
+  background-size: 2.5px 2.5px;
+  border: 1px solid darken(color(primary, base), 55);
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: #{$input-height}px;
+    height: #{$input-height}px;
+    background-color: color(primary, base);
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: #{$input-height}px;
+    height: #{$input-height}px;
+    background-color: color(primary, base);
+    cursor: pointer;
+  }
+}

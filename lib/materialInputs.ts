@@ -1,4 +1,6 @@
-export type TInputTypes = "range" | "checkbox";
+import palettes from "./palettes";
+
+export type TInputTypes = "range" | "checkbox" | "palette";
 export type TRangePreset = {
   max: number;
   min: number;
@@ -8,9 +10,10 @@ export type TPreset = TRangePreset;
 
 export interface IInput {
   name: string;
-  value: number;
+  value: number | boolean | string | string[];
   type: TInputTypes;
-  presets: TPreset;
+  presets?: TPreset;
+  options?: any[];
 }
 
 interface IMaterialInput {
@@ -19,6 +22,12 @@ interface IMaterialInput {
 
 const materialInputs: IMaterialInput = {
   exploded: [
+    {
+      name: "palette",
+      value: palettes[0],
+      type: "palette",
+      options: palettes,
+    },
     {
       name: "strength",
       value: 0.5,
@@ -48,6 +57,11 @@ const materialInputs: IMaterialInput = {
         min: 0,
         step: 0.01,
       },
+    },
+    {
+      name: "animated",
+      value: false,
+      type: "checkbox",
     },
   ],
 };

@@ -13,24 +13,22 @@ const SolidMesh: React.FC<{ mesh: Mesh; solidId: string }> = ({
     return solid.state.material;
   });
 
-  const strength = useSolidsStore((s) => {
-    const solid = new Map(s.activeSolids).get(solidId);
-    if (!solid) return 0.5;
-    return solid.state.exploded.strength;
-  });
-
-  const frequency = useSolidsStore((s) => {
-    const solid = new Map(s.activeSolids).get(solidId);
-    if (!solid) return 0.5;
-    return solid.state.exploded.frequency;
-  });
-
-  const amplitude = useSolidsStore((s) => {
-    const solid = new Map(s.activeSolids).get(solidId);
-    if (!solid) return 0.5;
-    return solid.state.exploded.amplitude;
-  });
-
+  const { strength, amplitude, frequency, animated, palette } = useSolidsStore(
+    (s) => {
+      const solid = new Map(s.activeSolids).get(solidId);
+      if (!solid)
+        return {
+          strength: 0.5,
+          amplitude: 0.5,
+          frequency: 0.5,
+          animated: false,
+          palette: palettes[0],
+        };
+      const { strength, amplitude, frequency, animated, palette } =
+        solid.state.exploded;
+      return { strength, amplitude, frequency, animated, palette };
+    }
+  );
   const { geometry } = mesh;
   geometry.computeBoundingBox();
   geometry.center();
@@ -42,7 +40,8 @@ const SolidMesh: React.FC<{ mesh: Mesh; solidId: string }> = ({
           case "exploded":
             return (
               <ExplodingMaterial
-                palette={palettes[0]}
+                animated={animated}
+                palette={palette}
                 strength={strength}
                 amplitude={amplitude}
                 frequency={frequency}

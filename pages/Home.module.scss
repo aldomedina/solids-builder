@@ -14,13 +14,67 @@
   .secondMarquee {
     margin-top: -6.7vh;
   }
-  .pitch {
-    font-size: 4.4vh;
+  .heroContent {
+    display: flex;
+    gap: 1.5rem;
     padding: 1.5rem;
-    margin-top: -1.5rem;
-    margin-left: 1.5rem;
-    border: 4px solid currentColor;
-    width: 66%;
-    border-radius: 1rem;
+    margin-top: -5vh;
+    @include respond-to("mobile") {
+      gap: 0.5rem;
+      padding: 0.5rem;
+      margin-top: -5vh;
+      flex-direction: column;
+    }
+    .pitch {
+      flex: 3;
+      font-size: 4vh;
+      padding: 1.5rem;
+      border: 4px solid currentColor;
+      border-radius: 1rem;
+      @include respond-to("mobile") {
+        font-size: 1.5rem;
+      }
+    }
+    .ctaWrapper {
+      flex: 2;
+      height: 100%;
+      width: 100%;
+      max-width: 40vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      @include respond-to("mobile") {
+        gap: 0.5rem;
+        max-width: none;
+        width: 100%;
+      }
+    }
+    .cta {
+      width: 100%;
+      border-radius: 1rem;
+      font-size: 10vw;
+      line-height: 1;
+      background-color: color(primary, base);
+      color: color(secondary, base);
+      border: 4px solid color(primary, base);
+      &:hover {
+        background-color: color(secondary, base);
+        color: color(primary, base);
+      }
+    }
+    .ctaBanner {
+      border: 4px solid currentColor;
+      border-radius: 1rem;
+      font-size: 6vh;
+      background-color: transparent;
+      background-image: radial-gradient(
+        color(primary, base) 0.4px,
+        transparent 0.4px
+      );
+      background-size: 4px 4px;
+      .bannerSpan {
+        margin-right: 1rem;
+      }
+    }
   }
 }

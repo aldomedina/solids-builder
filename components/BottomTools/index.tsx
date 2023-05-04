@@ -33,15 +33,17 @@ const BottomTools = () => {
         </div>
         <Button
           variant={grid ? "contained" : "outlined"}
-          className={s.grid}
+          className={classNames(s.grid, { [s.active]: grid })}
           onClick={() => setGrid(!grid)}
         >
           GRID
         </Button>
-        <ColorInput
-          value={backgroundColor}
-          onChange={(e) => setBackgroundColor(e)}
-        />
+        <div className={s.colorInputWrapper}>
+          <ColorInput
+            value={backgroundColor}
+            onChange={(e) => setBackgroundColor(e)}
+          />
+        </div>
       </div>
     </div>
   );

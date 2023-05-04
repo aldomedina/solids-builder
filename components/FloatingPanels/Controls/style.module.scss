@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.control {
+  height: max-content;
+  max-height: 30vh;
+  min-height: 140px;
+  overflow-y: auto;
+  border-radius: 0 0 4px 4px;
+}

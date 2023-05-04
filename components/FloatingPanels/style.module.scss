@@ -16,9 +16,9 @@ $bar-height: 35 + 2;
   position: absolute;
   background-color: color(secondary, base);
   width: 240px;
-  height: 500px;
   border: 1px solid color(primary, base);
   border-radius: 0 4px 4px 4px;
+
   .nameTag,
   .closeButton {
     position: absolute;

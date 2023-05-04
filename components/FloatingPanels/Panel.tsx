@@ -21,7 +21,6 @@ const Panel: React.FC<{
       {activeSolid.open && (
         <motion.div
           onMouseEnter={() => setActivePanel(index)}
-          whileHover={{ scale: 1.02 }}
           style={{
             top: `${45 + index * 20}px`,
             right: `${10 + index * 20}px`,

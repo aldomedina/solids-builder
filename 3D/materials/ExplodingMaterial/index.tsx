@@ -1,8 +1,10 @@
 import nc from "@/3D/utils/nc";
 
-import { DoubleSide, Vector3 } from "three";
+import { DoubleSide, ShaderMaterial, Vector3 } from "three";
 import fragmentShader from "./fragmentShader";
 import vertexShader from "./vertexShader";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 
 interface IExplodingMaterialProps {
   palette: string[];
@@ -11,6 +13,7 @@ interface IExplodingMaterialProps {
   min: Vector3;
   amplitude: number;
   frequency: number;
+  animated: boolean;
 }
 
 const createMaterial = (
@@ -62,9 +65,19 @@ const ExplodingMaterial = ({
   min,
   amplitude,
   frequency,
+  animated,
 }: IExplodingMaterialProps) => {
+  const ref = useRef<ShaderMaterial>(null);
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    if (animated)
+      ref.current.uniforms.u_time.value = clock.getElapsedTime() * 0.1;
+  });
+
   return (
     <shaderMaterial
+      ref={ref}
       attach="material"
       args={[createMaterial(palette, strength, max, min, amplitude, frequency)]}
       side={DoubleSide}

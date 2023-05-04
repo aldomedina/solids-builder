@@ -31,7 +31,7 @@ interface SolidsState {
     id: string,
     material: TMaterial,
     key: string,
-    value: string | number | boolean
+    value: string | number | boolean | string[]
   ) => void;
 }
 

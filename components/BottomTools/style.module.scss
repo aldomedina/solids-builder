@@ -18,12 +18,33 @@
     background: color(secondary, base);
   }
   .grid {
+    background: color(secondary, base);
     border: 1px solid color(primary, base);
+  }
+  .active {
+    background: color(primary, base);
   }
   .tools {
     display: flex;
     .transformMode {
       width: 130px;
+    }
+  }
+  .colorInputWrapper {
+    position: relative;
+    &::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+      background-image: radial-gradient(
+        color(primary, base) 0.4px,
+        transparent 0.4px
+      );
+      background-size: 4px 4px;
     }
   }
 }

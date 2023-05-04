@@ -6,7 +6,7 @@ import Layout from "@/containers/Layout";
 import SolidsModal from "@/components/SolidsModal";
 import BottomTools from "@/components/BottomTools";
 
-import SolidControls from "@/components/SolidControls";
+import FloatingPanels from "@/components/FloatingPanels";
 import CreatorScene from "@/3D/scenes/Creator";
 
 const CreatorPage = () => {
@@ -16,7 +16,7 @@ const CreatorPage = () => {
         <div className={s.canvasWrapper}>
           <CreatorScene />
         </div>
-        <SolidControls />
+        <FloatingPanels />
         <SolidsModal />
         <BottomTools />
       </div>

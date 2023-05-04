@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import useSolidsStore, { IActiveSolid } from "@/stores/solids";
 import Panel from "./Panel";
 
-const SolidControls = () => {
+const FloatingPanels = () => {
   const constraintsRef = useRef<HTMLDivElement>(null);
   const activeSolids = useSolidsStore((s) => {
     if (!s.activeSolids.size) return [];
@@ -31,4 +31,4 @@ const SolidControls = () => {
   );
 };
 
-export default SolidControls;
+export default FloatingPanels;

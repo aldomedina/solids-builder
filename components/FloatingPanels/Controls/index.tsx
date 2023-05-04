@@ -4,6 +4,8 @@ import useSolidsStore from "@/stores/solids";
 import React, { useState } from "react";
 import ExplodedControls from "./ExplodedControls";
 
+import s from "./style.module.scss";
+
 const Controls: React.FC<{ solidId: string }> = ({ solidId }) => {
   const material = useSolidsStore((s) => {
     const solid = new Map(s.activeSolids).get(solidId);
@@ -13,7 +15,7 @@ const Controls: React.FC<{ solidId: string }> = ({ solidId }) => {
   const setMaterial = useSolidsStore((s) => s.setMaterial);
 
   return (
-    <div>
+    <div className={s.control}>
       <Dropdown
         value={{ label: material, value: material }}
         setValue={(item) => setMaterial(solidId, item.value as TMaterial)}

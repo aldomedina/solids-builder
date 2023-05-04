@@ -1,0 +1,14 @@
+@import "@/styles/mixins.scss";
+
+.wrapper {
+  padding: 0.5rem;
+  border-bottom: 1px solid darken(color(primary, base), 70);
+  display: flex;
+  gap: 1rem;
+  .label {
+    min-width: 80px;
+    margin-bottom: 0.25rem;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+}
