@@ -1,0 +1,12 @@
+$tablet-breakpoint: 1000px;
+$mobile-breakpoint: 600px;
+
+$breakpoints: (
+  "tablet": $tablet-breakpoint,
+  "mobile": $mobile-breakpoint,
+) !default;
+
+:export {
+  tablet: $tablet-breakpoint;
+  mobile: $mobile-breakpoint;
+}

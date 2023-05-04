@@ -1,0 +1,14 @@
+@import "@/styles/mixins.scss";
+
+.main {
+  background-color: color(secondary, base);
+  color: color(primary, base);
+  height: 100vh;
+  position: relative;
+  .canvasWrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+  }
+}

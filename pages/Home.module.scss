@@ -1,0 +1,26 @@
+@import "@/styles/mixins.scss";
+
+.main {
+  background-color: color(secondary, base);
+  min-height: 100vh;
+  color: color(primary, base);
+  .marquee {
+    .title {
+      margin: 0.2rem;
+      font-size: 40vh;
+      user-select: none;
+    }
+  }
+  .secondMarquee {
+    margin-top: -6.7vh;
+  }
+  .pitch {
+    font-size: 4.4vh;
+    padding: 1.5rem;
+    margin-top: -1.5rem;
+    margin-left: 1.5rem;
+    border: 4px solid currentColor;
+    width: 66%;
+    border-radius: 1rem;
+  }
+}

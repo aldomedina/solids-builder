@@ -1,0 +1,115 @@
+@import "@/styles/mixins.scss";
+
+$bar-height: 35 + 2;
+$modal_width: 132;
+
+.wrapper {
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+  .modal {
+    position: fixed;
+    top: #{$bar-height}px;
+    left: 2px;
+    display: flex;
+    flex-direction: column;
+    background-color: color(secondary, base);
+    border: 1px solid currentColor;
+    height: 100%;
+    overflow: auto;
+    width: #{$modal_width}px;
+    height: calc(100% - #{$bar-height * 2}px);
+    margin-right: 2px;
+    &Title {
+      padding: 3px 0.5rem;
+      position: sticky;
+      top: 0;
+      color: color(primary, base);
+      background-color: color(secondary, base);
+      border-bottom: 1px solid currentColor;
+    }
+    .item {
+      position: relative;
+      transition: all 0.2s ease-in;
+      &::after {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        transition: all 0.15s ease-in-out;
+        box-shadow: inset 0px 0px 00px 0px rgba(0, 0, 0, 0);
+      }
+    }
+    .selectedItem {
+      &::after {
+        box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, 0.95);
+      }
+    }
+  }
+  .bar {
+    display: flex;
+    height: max-content;
+    .btn {
+      background-color: color(secondary, base);
+    }
+    .solidsBar {
+      display: flex;
+      .solid {
+        position: relative;
+        min-width: 120px;
+        margin: 0 1px;
+        z-index: 10;
+        .btn {
+          background-color: color(secondary, base);
+          text-align: center;
+          padding: 0 0.5rem;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          cursor: pointer;
+          &:disabled {
+            cursor: default;
+          }
+        }
+        .menu {
+          width: 100%;
+          top: 100%;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          background-color: color(secondary, base);
+          border: 1px solid color(primary, base);
+          &Item {
+            padding: 0.5rem;
+            border-bottom: 1px solid color(primary, base);
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+      .selected {
+        background-color: color(primary, base) !important;
+      }
+    }
+  }
+}
+.imageWrapper {
+  z-index: 100;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  bottom: 0;
+  right: 0;
+
+  .image {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+}

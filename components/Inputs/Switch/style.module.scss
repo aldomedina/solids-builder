@@ -1,0 +1,23 @@
+$handle-size: 14;
+$switch-padding: 4;
+.switch {
+  width: #{$handle-size * 2.5}px;
+  height: #{$handle-size + $switch-padding * 2}px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  padding: #{$switch-padding}px;
+  cursor: pointer;
+}
+
+.switch[data-ison="true"] {
+  justify-content: flex-end;
+}
+
+.handle {
+  width: #{$handle-size}px;
+  height: #{$handle-size}px;
+  background-color: var(--color-primary);
+  border-radius: 40px;
+}

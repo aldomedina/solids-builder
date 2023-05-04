@@ -1,0 +1,63 @@
+@import "@/styles/mixins.scss";
+
+.wrapper {
+  position: relative;
+  .header {
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid color(primary, base);
+    background-color: color(secondary, base);
+    text-transform: uppercase;
+    .text {
+      flex: 1;
+    }
+    .icon {
+    }
+  }
+  .open {
+    background-color: color(primary, base);
+    color: color(secondary, base);
+  }
+  .drawer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    .option {
+      cursor: pointer;
+      text-transform: uppercase;
+      border: 1px solid color(primary, base);
+      background-color: color(secondary, base);
+      padding: 0.5rem;
+      &:hover {
+        background-color: color(secondary, base);
+        background-image: radial-gradient(
+          color(primary, base) 0.4px,
+          color(secondary, base) 0.4px
+        );
+        background-size: 2.5px 2.5px;
+      }
+    }
+    .selected {
+      cursor: default;
+      background-color: color(primary, base);
+      color: color(secondary, base);
+      &:hover {
+        background-color: color(primary, base);
+        background-image: none;
+      }
+    }
+  }
+  .top {
+    bottom: 100%;
+  }
+  .bottom {
+    top: 100%;
+  }
+}
+.fullWidth {
+  width: 100%;
+}

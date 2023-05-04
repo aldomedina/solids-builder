@@ -1,0 +1,29 @@
+@import "@/styles/mixins.scss";
+
+.wrapper {
+  opacity: 1;
+}
+.hide {
+  opacity: 0;
+}
+.wrapper {
+  transition: all 0.15s ease-in-out;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  .btn {
+    background: color(secondary, base);
+  }
+  .grid {
+    border: 1px solid color(primary, base);
+  }
+  .tools {
+    display: flex;
+    .transformMode {
+      width: 130px;
+    }
+  }
+}

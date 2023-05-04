@@ -1,0 +1,28 @@
+// $primary-color: #00DA89;
+// $secondary-color: #5D41FF;
+$primary-color: #e9e7dd;
+$secondary-color: #141415;
+$light-color: #fff;
+$dark-color: #000;
+
+$palettes: (
+  primary: (
+    base: $primary-color,
+  ),
+  secondary: (
+    base: $secondary-color,
+  ),
+  light: (
+    base: $light-color,
+  ),
+  dark: (
+    base: $dark-color,
+  ),
+);
+
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  lightColor: $light-color;
+  darkColor: $dark-color;
+}

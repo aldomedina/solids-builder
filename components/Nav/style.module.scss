@@ -1,0 +1,13 @@
+@import "@/styles/mixins.scss";
+
+.nav {
+  width: 100%;
+  background-color: color(primary, base);
+  display: flex;
+  justify-content: space-between;
+  .marquee {
+    flex: 1;
+    font-size: 1.8rem;
+    color: color(dark, base);
+  }
+}

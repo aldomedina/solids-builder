@@ -1,0 +1,31 @@
+@import "@/styles/mixins.scss";
+
+.color {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 1px solid color(primary, base);
+  cursor: pointer;
+  height: 35px;
+  padding: 0;
+  width: 35px;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: 0;
+    border-radius: 0;
+  }
+
+  &::-moz-color-swatch,
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+  }
+}
