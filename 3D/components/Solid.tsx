@@ -5,11 +5,11 @@ import useSolidsStore from "@/stores/solids";
 import { Group, Mesh as TMesh } from "three";
 import { useRef, useState } from "react";
 
-const models = ["/models/93.glb", "/models/6714.glb"];
+const models = ["/models/6714.glb"];
 
 const Solid: React.FC<{ solid: ISolid }> = ({ solid }) => {
   //   const gltf = useGLTF(solid.metadata.model_url);
-  const gltf = useGLTF(models[1]);
+  const gltf = useGLTF(models[0]);
   const setTarget = useSolidsStore((s) => s.setTarget);
   const groupRef = useRef<Group>(null);
   const [hovered, setHovered] = useState(false);

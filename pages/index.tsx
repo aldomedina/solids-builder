@@ -6,6 +6,7 @@ import { outward } from "@/styles/fonts";
 
 import Nav from "@/components/Nav";
 import { useRouter } from "next/router";
+import LandingScene from "@/3D/scenes/Landing";
 
 export default function Home() {
   const { push } = useRouter();
@@ -43,6 +44,9 @@ export default function Home() {
               </Marquee>
             </div>
           </div>
+        </div>
+        <div className={s.canvasWrapper}>
+          <LandingScene />
         </div>
       </div>
     </Layout>
