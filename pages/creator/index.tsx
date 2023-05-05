@@ -8,6 +8,7 @@ import BottomTools from "@/components/BottomTools";
 
 import FloatingPanels from "@/components/FloatingPanels";
 import CreatorScene from "@/3D/scenes/Creator";
+import EffectsModal from "@/components/EffectsModal";
 
 const CreatorPage = () => {
   return (
@@ -19,6 +20,7 @@ const CreatorPage = () => {
         <FloatingPanels />
         <SolidsModal />
         <BottomTools />
+        <EffectsModal />
       </div>
     </Layout>
   );

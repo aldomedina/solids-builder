@@ -3,7 +3,7 @@ import { create } from "zustand";
 import init, {
   ISolidState,
   TMaterial,
-} from "./constants/solidInitialModificationsState";
+} from "../constants/solidInitialModificationsState";
 import { Object3D } from "three";
 
 export interface IActiveSolid {

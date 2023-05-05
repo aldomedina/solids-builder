@@ -1,0 +1,33 @@
+@import "@/styles/mixins.scss";
+
+$bar-height: 35 + 2;
+$modal_width: 132;
+
+.modal {
+  position: fixed;
+  top: #{$bar-height}px;
+  left: 2px;
+  display: flex;
+  flex-direction: column;
+  background-color: color(secondary, base);
+  border: 1px solid currentColor;
+  height: 100%;
+  overflow: auto;
+  width: #{$modal_width}px;
+  height: calc(100% - #{$bar-height * 2}px);
+  margin-right: 2px;
+  &Title {
+    padding: 3px 0.5rem;
+    position: sticky;
+    top: 0;
+    color: color(primary, base);
+    background-color: color(secondary, base);
+    border-bottom: 1px solid currentColor;
+  }
+  .effect {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid currentColor;
+  }
+}

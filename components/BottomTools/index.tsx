@@ -5,10 +5,11 @@ import classNames from "classnames";
 import Dropdown from "../Dropdown";
 import ColorInput from "../Inputs/ColorInput";
 import useSceneStore from "@/stores/scene";
+import useEffectsStore from "@/stores/effects";
 
 const modeOptions = ["translate", "rotate", "scale"];
 const BottomTools = () => {
-  const solidsModalOpen = useSolidsStore((s) => s.isPanelOpen);
+  const setEffectsOpen = useEffectsStore((s) => s.setModalOpen);
   const setTransformMode = useSolidsStore((s) => s.setTransformMode);
   const transformMode = useSolidsStore((s) => s.transformMode);
   const { backgroundColor, setBackgroundColor, grid, setGrid } =
@@ -17,7 +18,11 @@ const BottomTools = () => {
   return (
     <div className={classNames(s.wrapper)}>
       <div>
-        <Button variant="outlined" className={s.btn}>
+        <Button
+          variant="outlined"
+          className={s.btn}
+          onClick={() => setEffectsOpen(true)}
+        >
           + EFFECTS
         </Button>
       </div>

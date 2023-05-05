@@ -1,6 +1,7 @@
 @import "@/styles/mixins.scss";
 
 .main {
+  position: relative;
   background-color: color(secondary, base);
   min-height: 100vh;
   color: color(primary, base);
